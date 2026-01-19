@@ -20,6 +20,6 @@ public class ChatController {
 
     @GetMapping("/chatmessage")
     public String chatmessage(String message) {
-
+        return chatService.chatmessage(message);
     }
 }

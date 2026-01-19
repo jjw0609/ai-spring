@@ -13,6 +13,16 @@ public class ChatService {
         return chatClient.prompt()  //프롬프트 생성
                 .user(message)  //사용자 메세지
                 .call()     //호출
-                .content(); //요청 정보를 받는 부분
+                .content(); //ChatResponse --> 요청 정보를 받는 부분(문자열)
+    }
+
+    public String chatmessage(String message) {
+        return chatClient.prompt()
+                .user(message)
+                .call()
+                .chatResponse() //ChatResponse
+                .getResult()
+                .getOutput()
+                .getContent()
     }
 }
