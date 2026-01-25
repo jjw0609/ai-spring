@@ -1,7 +1,10 @@
-package main.java.com.example.openai.controller;
+package com.example.openai.controller;
 
 
 import main.java.com.example.openai.service.ChatService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ChatController {
@@ -21,5 +24,10 @@ public class ChatController {
     @GetMapping("/chatmessage")
     public String chatmessage(String message) {
         return chatService.chatmessage(message);
+    }
+
+    @GetMapping("/chatplace")
+    public String chatplace(String subject, String tone,  String message) {
+        return chatService.chatplace(subject, tone, message);
     }
 }

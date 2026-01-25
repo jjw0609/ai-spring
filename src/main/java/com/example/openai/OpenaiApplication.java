@@ -1,4 +1,4 @@
-package main.java.com.example.openai;
+package com.example.openai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

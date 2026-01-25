@@ -1,8 +1,17 @@
-package main.java.com.example.openai.config;
+package com.example.openai.config;
 
+
+import jakarta.annotation.Resource;
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+
+    @Value("classpath:/prompt.txt")
+    private Resource resource;
 
     //ChatClient <---- openAI key  ----> LLM(openai)
     @Bean
