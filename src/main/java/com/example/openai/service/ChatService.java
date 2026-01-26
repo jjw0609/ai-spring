@@ -26,12 +26,20 @@ public class ChatService {
                 .chatResponse() //ChatResponse
                 .getResult()
                 .getOutput()
-                .getContent();
+                .getText();
     }
 
     public String chatplace(String subject, String tone, String message) {
         return chatClient.prompt()
                 .user(message)
-                .system()
+                .system(sp -> sp
+                        .param("subject", subject)
+                        .param("tone", tone)
+                )
+                .call()
+                .chatResponse()
+                .getResult()
+                .getOutput()
+                .getText();
     }
 }
