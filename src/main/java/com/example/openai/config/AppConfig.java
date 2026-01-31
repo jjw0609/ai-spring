@@ -17,6 +17,8 @@ public class AppConfig {
     @Bean
     public ChatClient chatClient(ChatClient.Builder chatClientBuilder) {
         //System Message(LLM에 역할 부여)
-        return chatClientBuilder.defaultSystem("당신은 교육 튜터입니다. 개념을 명확하고 간단하게 설명하세요").build();
+//        return chatClientBuilder.defaultSystem("당신은 교육 튜터입니다. 개념을 명확하고 간단하게 설명하세요").build();
+//        return chatClientBuilder.defaultSystem(resource).build();
+        return chatClientBuilder.build();
     }
 }
